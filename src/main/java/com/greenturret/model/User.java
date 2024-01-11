@@ -10,8 +10,20 @@ public class User {
     private String id;
     private String username;
 
+    private String password;
+
+    private String role;
+
     public String getId() {
         return id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setId(String id) {
@@ -33,7 +45,5 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-
-    private String role;  //driver, donor, coordinator
 
 }
