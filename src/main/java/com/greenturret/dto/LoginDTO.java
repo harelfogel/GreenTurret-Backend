@@ -1,16 +1,8 @@
 package com.greenturret.dto;
 
-public class UserResponseDTO {
-    private String id;
+public class LoginDTO {
     private String username;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String password;
 
     public String getUsername() {
         return username;
@@ -19,4 +11,13 @@ public class UserResponseDTO {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPasswrod(String password) {
+        this.password = password;
+    }
+
 }

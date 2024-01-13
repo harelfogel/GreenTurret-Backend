@@ -1,5 +1,6 @@
 package com.greenturret.controller;
 
+import com.greenturret.dto.LoginDTO;
 import com.greenturret.dto.UserDTO;
 import com.greenturret.model.User;
 import com.greenturret.response.ApiResponse;
@@ -32,7 +33,13 @@ public class UserController {
         // Call UserService to handle the creation of a new user
         userService.createUser(userDTO);
         ApiResponse response = new ApiResponse(EResponseStatus.SUCCESS, "User registered successfully", null);
-        return ResponseEntity.ok().body("User Registrated succsufully");
+        return ResponseEntity.ok().body(response);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDTO) {
+        String token = userService.authenticateUser(loginDTO);
+        return ResponseEntity.ok(new ApiResponse(EResponseStatus.SUCCESS, "Login successful", token));
     }
 
 }
